@@ -1,0 +1,95 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#132a1d"/>
+      <stop offset="100%" stop-color="#1f4a30"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd6a8"/>
+      <stop offset="100%" stop-color="#4f9d6c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- motif de fond discret : lignes de champ -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.05">
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="0" y1="580" x2="1200" y2="580"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="0" y1="620" x2="1200" y2="620"/>
+  </g>
+
+  <!-- ===== Colonne gauche : texte ===== -->
+  <text x="70" y="150" font-size="20" letter-spacing="3" fill="#8fd6a8" font-weight="600">PROJET DATA SCIENCE</text>
+  <text x="70" y="215" font-size="64" font-weight="800" fill="#f4faf6">AgriPredict</text>
+  <text x="70" y="260" font-size="24" fill="#cfe8d6">Classification de cultures agricoles</text>
+  <text x="70" y="292" font-size="24" fill="#cfe8d6">par Machine Learning</text>
+
+  <text x="70" y="345" font-size="17" fill="#a9cdb7">Prédire la classe d'une culture (céréales, légumineuses,</text>
+  <text x="70" y="368" font-size="17" fill="#a9cdb7">maraîchage, cultures industrielles) à partir de données</text>
+  <text x="70" y="391" font-size="17" fill="#a9cdb7">de sol, de climat et de pratiques agricoles.</text>
+
+  <!-- tags -->
+  <g font-size="15" fill="#132a1d" font-weight="600">
+    <rect x="70" y="420" width="76" height="32" rx="16" fill="#8fd6a8"/>
+    <text x="88" y="441">Python</text>
+
+    <rect x="156" y="420" width="120" height="32" rx="16" fill="#8fd6a8"/>
+    <text x="174" y="441">scikit-learn</text>
+
+    <rect x="286" y="420" width="150" height="32" rx="16" fill="#8fd6a8"/>
+    <text x="304" y="441">KNN Classifier</text>
+
+    <rect x="446" y="420" width="150" height="32" rx="16" fill="#8fd6a8"/>
+    <text x="464" y="441">Validation croisée</text>
+  </g>
+
+  <!-- 4 classes avec puces -->
+  <g font-size="16" fill="#e7f4ea">
+    <circle cx="80" cy="500" r="6" fill="#e07a5f"/>
+    <text x="96" y="506">Céréales</text>
+
+    <circle cx="220" cy="500" r="6" fill="#3d5a80"/>
+    <text x="236" y="506">Légumineuses</text>
+
+    <circle cx="390" cy="500" r="6" fill="#f4c95d"/>
+    <text x="406" y="506">Maraîchage</text>
+
+    <circle cx="540" cy="500" r="6" fill="#81b29a"/>
+    <text x="556" y="506">Cultures industrielles</text>
+  </g>
+
+  <!-- ===== Colonne droite : visualisation resultats ===== -->
+  <g transform="translate(760,110)">
+    <rect x="0" y="0" width="370" height="420" rx="20" fill="#0f2417" opacity="0.6" stroke="#3f7d4f" stroke-width="1"/>
+
+    <text x="30" y="45" font-size="16" fill="#a9cdb7" font-weight="600">PRÉCISION DU MODÈLE</text>
+
+    <!-- comparaison barres : baseline vs modele -->
+    <g>
+      <!-- baseline -->
+      <rect x="40" y="210" width="60" height="40" fill="#5a5a5a" opacity="0.6"/>
+      <text x="42" y="270" font-size="13" fill="#cfe8d6">Hasard</text>
+      <text x="42" y="200" font-size="15" fill="#e7f4ea" font-weight="700">21%</text>
+
+      <!-- modele -->
+      <rect x="140" y="90" width="60" height="160" fill="url(#barGrad)"/>
+      <text x="130" y="270" font-size="13" fill="#cfe8d6">KNN (k=5)</text>
+      <text x="138" y="80" font-size="22" fill="#f4faf6" font-weight="800">96%</text>
+    </g>
+
+    <!-- pipeline reellement utilise -->
+    <text x="30" y="320" font-size="16" fill="#a9cdb7" font-weight="600">PIPELINE UTILISÉ</text>
+    <g font-size="14" fill="#e7f4ea">
+      <circle cx="38" cy="350" r="4" fill="#8fd6a8"/>
+      <text x="52" y="355">StandardScaler (variables numériques)</text>
+
+      <circle cx="38" cy="378" r="4" fill="#8fd6a8"/>
+      <text x="52" y="383">OrdinalEncoder (variables ordonnées)</text>
+
+      <circle cx="38" cy="406" r="4" fill="#8fd6a8"/>
+      <text x="52" y="411">OneHotEncoder (variables nominales)</text>
+    </g>
+  </g>
+</svg>
