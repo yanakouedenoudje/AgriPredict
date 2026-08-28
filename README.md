@@ -43,7 +43,6 @@ Le dataset est synthétique mais construit avec une logique agronomique cohéren
 5. **Évaluation** :
    - Validation croisée à 5 plis (`KFold`).
    - Comparaison avec un `DummyClassifier` pour vérifier que le modèle apprend un signal réel.
-   - `classification_report` et matrice de confusion pour une évaluation par classe (pas seulement l'accuracy globale).
 6. **Test de sensibilité** : vérification de l'effet d'une variable (`region`) sur la prédiction d'une parcelle donnée.
 
 ## Résultats
